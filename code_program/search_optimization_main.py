@@ -10,10 +10,10 @@ warnings.filterwarnings("ignore")
 
 #######################- YOU NEED TO DEFINE THE PATH of your location -#######################
 # Please set your folder path for NN-based optimization folder
-PC_folder    = '..\\search_based_optimization\\' # 1*This needs to be changed
+PC_folder    = '..\\nearest-neighbor-based-optimization-framework\\' # 1*This needs to be changed
 
 # Please set your folder path for code_program
-sys.path.insert(0, '..\\search_based_optimization\\code_program')# 2*This needs to be changed
+sys.path.insert(0, '..\\nearest-neighbor-based-optimization-framework\\code_program')# 2*This needs to be changed
 
 # Please put your dataset name that is supposed to be inside "basedata_setting" folder
 dataset_name = 'sample.csv' # 3*This needs to be changed as per required
