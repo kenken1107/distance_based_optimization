@@ -11,7 +11,7 @@ def search_optimization_execution(PC_folder, opt_info_dict, folder_name):
     ##### Import the optimization information #####
 
     # Set the current directory
-    os.chdir(PC_folder + "\\basedata_setting")
+    os.chdir(PC_folder + "\\basedata_settings")
 
     # Get the file name for "basedata"
     file_name_base_data = opt_info_dict["basedata_file"]
