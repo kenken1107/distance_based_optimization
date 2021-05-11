@@ -5,7 +5,7 @@ Created on Tue May 11 15:27:51 2021
 
 @author: shintanitaketo
 """
-from main.main import Car
+from main import Car
 
 def test_add_01():
     car = Car()
