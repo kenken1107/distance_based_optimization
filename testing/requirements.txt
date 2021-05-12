@@ -1,2 +1,0 @@
-neologdn==0.5.1
-ja_sentence_segmenter==0.0.2
