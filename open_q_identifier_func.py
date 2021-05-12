@@ -5,21 +5,25 @@ Created on Mon May 10 13:31:33 2021
 
 @author: shintanitaketo
 """
+# 重複特殊文字の削除用
+import neologdn
+
+# 文区切り用
+import functools
+from ja_sentence_segmenter.common.pipeline import make_pipeline
+from ja_sentence_segmenter.concatenate.simple_concatenator import concatenate_matching
+from ja_sentence_segmenter.normalize.neologd_normalizer import normalize
+from ja_sentence_segmenter.split.simple_splitter import split_newline, split_punctuation
+
+# 正規表現
+import re
+
 def question_sentence_splitter(question: str) -> list:
     """
     
     入力された質問を、正規化し、文章単位に分ける関数
     
     """
-    # 重複特殊文字の削除用
-    import neologdn
-
-    # 文区切り用
-    import functools
-    from ja_sentence_segmenter.common.pipeline import make_pipeline
-    from ja_sentence_segmenter.concatenate.simple_concatenator import concatenate_matching
-    from ja_sentence_segmenter.normalize.neologd_normalizer import normalize
-    from ja_sentence_segmenter.split.simple_splitter import split_newline, split_punctuation
 
     # questionの正規化
     question = neologdn.normalize(question, repeat=1)
@@ -51,9 +55,6 @@ def question_extractor(questions: list) -> list or None:
     regex_wh  = r'(いつ|どこ|どこで|誰|誰が|だれが|だれ|何|何を|なに|なにを|なんでしょうか|なんですか|なぜ|どうして|どのように|どうすれば|いかが|如何|いかにして)'
     regex_eos = r'(か|って|かい|の|って|け|ね)[?。.]*$' 
     regex_ad = r"(いつも|誰かしら|だれかしら|なにかしら|何かしら|どこかしら)" 
-    
-    # 正規表現用
-    import re
     
     # 5W1H判定の判定
     question_list = []
