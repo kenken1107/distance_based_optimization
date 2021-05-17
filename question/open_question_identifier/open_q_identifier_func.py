@@ -66,11 +66,11 @@ def question_extractor(questions: list) -> list:
             
             # かつ、文末に「~か？」がついているパターン -> 疑問文
             if re.search(regex_eos, q) is not None:
-                print("5W1H入ってない、かつ、文末に「~か？」がついている -> 疑問文")
+                #print("5W1H入ってない、かつ、文末に「~か？」がついている -> 疑問文")
                 question_list.append(q)
             # 文末に「~か？」がついていないパターン -> not疑問文
             else:
-                print("5W1H入ってない、かつ、文末に「~か？」がついているパターン -> not疑問文")
+                #print("5W1H入ってない、かつ、文末に「~か？」がついているパターン -> not疑問文")
                 continue
         
         ##### 5W1H入っている #####
@@ -81,11 +81,11 @@ def question_extractor(questions: list) -> list:
                 
                 # かつ、文末に「~か」がない - > not疑問文
                 if re.search(regex_eos, q) is None:
-                    print("5W1H入っている、副詞が入っていない、かつ、文末に「~か」がない - > not疑問文")
+                    #print("5W1H入っている、副詞が入っていない、かつ、文末に「~か」がない - > not疑問文")
                     continue
                 # 文末に「~か」がある - > 疑問文
                 else:
-                    print("5W1H入っている、副詞が入っていない、かつ、文末に「~か」がある - > 疑問文")
+                    #print("5W1H入っている、副詞が入っていない、かつ、文末に「~か」がある - > 疑問文")
                     question_list.append(q)
                 
             # かつ、副詞が入っている
@@ -93,11 +93,11 @@ def question_extractor(questions: list) -> list:
                 
                 # かつ、文末に「~か」がない - > not疑問文
                 if re.search(regex_eos, q) is None:
-                    print("5W1H入っている、副詞が入っている、かつ、文末に「~か」がない - > not疑問文")
+                    #print("5W1H入っている、副詞が入っている、かつ、文末に「~か」がない - > not疑問文")
                     continue
                 #かつ、文末に「~か」がある -> 疑問文
                 else:
-                    print("5W1H入っている、副詞が入っている、かつ、文末に「~か」がある - > 疑問文")
+                    #print("5W1H入っている、副詞が入っている、かつ、文末に「~か」がある - > 疑問文")
                     question_list.append(q)
         
         # 紛れもない、ただのコメント
